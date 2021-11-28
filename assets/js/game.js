@@ -82,7 +82,13 @@ var fight = function(enemyName) {
 }; 
 
 for(var i = 0; i < enemyNames.length; i++) {
-    var pickedEnemeyName = enemyNames[i];
-    enemyHealth = 50;
-    fight(pickedEnemeyName);
+    if (playerHealth > 0) {
+        window.alert("Welcome to Robot Galdiators! Round " + (i + 1));
+        var pickedEnemeyName = enemyNames[i];
+        enemyHealth = 50;
+        fight(pickedEnemeyName);
+    } else {
+        window.alert("You ahve lost your robot in battle! Game Over!");
+        break;
+    }
 }
